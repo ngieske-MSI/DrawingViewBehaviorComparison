@@ -37,12 +37,18 @@ namespace DrawingViewBehaviorComparison
             // Defaulting to half the size of an Android image in 3:4 aspect ratio. Feel free to change and experiment.
             var desiredImageSize = new Size(1512, 2016);
 
+            // As per the samples in the documentation, the canvas size is set to the size of the DrawingView. 
+            var canvasSize = new Size(_drawView.Width, _drawView.Height);
+
+            // On Windows, the canvasSize seems to control the output image resolution. This line included for testing purposes. 
+            //canvasSize = new Size(1512, 2016);
+
             using var stream = await DrawingViewService.GetImageStream(
                 ImageLineOptions.FullCanvas(
                     _drawView.Lines,
                     desiredImageSize,
                     Brush.Gray,
-                    new Size(_drawView.Width, _drawView.Height)
+                    canvasSize
                 )
             );
 
