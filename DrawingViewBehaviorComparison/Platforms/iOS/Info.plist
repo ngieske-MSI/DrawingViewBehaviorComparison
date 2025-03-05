@@ -28,5 +28,7 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
+  <key>NSPhotoLibraryAddUsageDescription</key>
+  <string>Please allow access to save photos in your photo library.</string>
 </dict>
 </plist>
